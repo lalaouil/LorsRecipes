@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.6'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'coffee-rails', '~> 4.0.0'
@@ -14,15 +13,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'pry'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
