@@ -19,7 +19,7 @@ class RecipeTest < ActiveSupport::TestCase
   
    test "name should be present" do
      @recipe.name = " "
-     assert_not @recipes.valid?
+     assert_not @recipe.valid?
    end
   
    test "name length should not be too long" do

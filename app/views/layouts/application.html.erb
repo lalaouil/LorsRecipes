@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lor'sRecipes</title>
+  <title>My Healthy Thanksgiving</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,11 +10,12 @@
 
   <%= render "layouts/navigation" %>
   
-  <div class="container">
-    <%= yield %>
+  <%= render "layouts/messages" %>
+  
+  <%= yield %>
+  
+  <%= render "layouts/footer" %>
     
-    <%= render "layout/footer" %>
-    
-  </div>
+
 </body>
 </html>
