@@ -1,31 +1,37 @@
 <div class="jumbotron">
-  <h1>Welcome to My Healthy Thanksgiving</h1>
+  <h1>A PLACE TO SHARE FAVORITE RECIPES</h1>
   <h2>
-    My favorite Thanksgiving Day recipes, all in one location. Please use only organic ingredients.
+    Sign up to save your own favorite recipes, create reviews, and more!
   </h2>
-  <%= link_to "Sign up now!", "", class: "btn-custom btn-lg btn-info" %>
+   <%= link_to "Save Your Own Recipes", register_path, class: "btn-custom btn-lg btn-info" %>
+  <p>&nbsp</p>
+  <h2>
+    Feel free to browse and view recipes as a guest and sign up later.
+  </h2>
+  <p><%= link_to "Browse as a Guest",recipes_path, class: "btn-custom btn-lg btn-info" %></p>
 </div>
-<div class="container">
 <div class="row">
-  <div class="col-sm-4">
-    <h3 class="midrow">
-      View Recipes as Guest User
-    </h3>
-    <h2 class="left">Browse and view recipes as a guest and sign up later</h2>
-    <p><%= link_to "Browse Recipe Listings", recipes_path, class: "btn-custom btn-sm btn-info" %></p>
-  </div>
-  <div class="col-sm-4">
-    <h3 class="midrow">
-      View Recipes as Guest User
-    </h3>
-    <h2 class="left">Browse and view recipes as a guest and sign up later</h2>
-    <p><%= link_to "Browse Recipe Listings", "", class: "btn-custom btn-sm btn-info" %></p>
-  </div>
-  <div class="col-sm-4">
-    <h3 class="midrow">
-      View Recipes as Guest User
-    </h3>
-    <h2 class="left">Browse and view recipes as a guest and sign up later</h2>
-    <p><%= link_to "Browse Recipe Listings", "", class: "btn-custom btn-sm btn-info" %></p>
+  <div class="container">
+    <div class="col-lg-4">
+      <h3 class="midrow">
+        View Recipes as Guest User
+      </h3>
+      <h2 class="left">Browse and view recipes as a guest and sign up later</h2>
+      <p><%= link_to "Browse Recipe Listings", recipes_path, class: "btn-custom btn-md btn-info" %></p>
+    </div>
+    <div class="col-lg-4">
+      <h3 class="midrow">
+        Sign in to Your Account
+      </h3>
+      <h2 class="left">Add/update your recipes, create reviews, like/dislike recipes and much more!</h2>
+      <p><%= link_to "Log in to your account", login_path, class: "btn-custom btn-md btn-info" %></p>
+    </div>
+    <div class="col-lg-4">
+      <h3 class="midrow">
+        View Recipes as Guest User
+      </h3>
+      <h2 class="left">Browse and view recipes as a guest and sign up later</h2>
+      <p><%= link_to "Browse Recipe Listings", "", class: "btn-custom btn-md btn-info" %></p>
+    </div>
   </div>
 </div>

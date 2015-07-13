@@ -1,25 +1,28 @@
-$navbar-default-bg: #FFA000;
-$pumpkin: #FFA000;
-$navbar-default-color: $pumpkin; 
+$navbar-default-bg: #456e55;
+$dark-green: #92d9cf;
+$navbar-default-color: $dark-green; 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .btn-custom {
-  background-color: hsl(360, 100%, 69%) !important;
+  background-color: #932533 !important;
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff6060", endColorstr="#ff6060");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#ff6060), to(#ff6060));
-  background-image: -moz-linear-gradient(top, #ff6060, #ff6060);
-  background-image: -ms-linear-gradient(top, #ff6060, #ff6060);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6060), color-stop(100%, #ff6060));
-  background-image: -webkit-linear-gradient(top, #ff6060, #ff6060);
-  background-image: -o-linear-gradient(top, #ff6060, #ff6060);
-  background-image: linear-gradient(#ff6060, #ff6060);
-  border-color: #ff6060 #ff6060 hsl(360, 100%, 69%);
   color: #FFFFFF;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
-  -webkit-font-smoothing: antialiased;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 5px;
+}
+
+.btn-custom:hover {
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.btn-submit {
+  background-color: #456e55;
+  color: #FFFFFF;
+  border-color:#456e55;
 }
 
 #logo {
@@ -29,38 +32,53 @@ $navbar-default-color: $pumpkin;
   margin-right: 10px;
   font-size: 2em;
   color: #FFFFFF;
-  text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  //padding-top: 9px;
   font-weight: bold;
 }
 
 #logo:hover {
   color: white;
+  text-decoration: none;
+  opacity: 0.75;
 }
 
 body {
-  padding-top: 80px;
+  padding-top: 50px;
 
 }
 
 .nav_item {
   margin-left: 25px;
-  float:left;
+  float: left;
   margin-top: 20px;
+}
+
+.nav_ul_item {
+  padding-left: 25px;
+  float: left;
+  margin-top: 20px;
+}
+
+.dropdown-menu {
+  color: #FFFFFF;
 }
 
 .jumbotron {
   text-align: center;
-  background-color: #FFA000;
-  background-image: url("thanksgiving-background-10.jpg");
+  background-image: image-url("cookbooks1a.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   color: #FFFFFF;
 }
 
 .jumbotron h2 {
+  font-size: 1.5em;
   color: #FFFFFF;
+}
+
+.center {
+  text-align: center;
 }
 
 h1, h2, h3, h4 {
@@ -76,7 +94,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
@@ -88,10 +106,9 @@ h2 {
   letter-spacing: .5px;
 }
   
-
 .footer {
-  margin-top: 350px;
-  border-top: 1px solid #FFA000;
+  margin-top: 25px;
+  border-top: 1px solid #9dddcc;
   color: #666666;
 }
 
@@ -100,7 +117,7 @@ h2 {
 }
 
 .chef_info {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .gravatar {
@@ -111,10 +128,14 @@ h2 {
   background-color: #EDEDED;
 }
 input, textarea, select, .uneditable_input {
-  border: 1px solid  #FFA000;
+  border: 1px solid  #d2d2d2;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 15px;
+}
+
+.input_checkbox input {
+  width: auto !important; 
 }
 
 input {

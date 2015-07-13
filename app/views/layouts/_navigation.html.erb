@@ -1,14 +1,33 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <%= link_to "myRecipes", root_path, class: "btn-custom btn-lg btn-info", id: "logo" %>
+    <%= link_to "Lor'sRecipes", root_path, class: "btn-custom btn-lg btn-info", id: "logo" %>
     <div class="nav_item">
       <%= link_to "link 1", "", class: "btn-custom btn-default btn-info" %>
     </div>
     <div class="nav_item">
-      <%= link_to "link 1", "", class: "btn-custom btn-default btn-info" %>
+      <%= link_to "link 2", "", class: "btn-custom btn-default btn-info" %>
     </div>
-    <div class="nav_item">
-       <%= link_to "New Recipe", new_recipe_path, class: "btn-custom btn-default btn-info" %>
-    </div>
+      <% if logged_in? %>
+        <div class="nav_item">
+          <%= link_to "New Recipe", new_recipe_path, class: "btn-custom btn-default btn-info" %>
+        </div>
+        <ul class="nav_item list-unstyled">
+          <li class="dropdown">
+            <%= link_to '#', class: "btn-custom btn-default btn-info dropdown-toggle", "data-toggle" => "dropdown" do %>            
+              <%= current_user.chefname %> <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu list-unstyled">
+              <li><%= link_to "View Your Profile", chef_path(current_user) %></li>
+              <li><%= link_to "Edit Your Profile", edit_chef_path(current_user) %></li>
+              <li class= "divider"></li>
+              <li><%= link_to "Logout", logout_path %></li>
+            </ul>
+          </li>
+        </ul>
+      <% else %>
+      <div class="nav_item">
+        <%= link_to "Log in", login_path, class: "btn-custom btn-default btn-info" %>
+      </div>
+    <% end %>
   </div>
 </header
