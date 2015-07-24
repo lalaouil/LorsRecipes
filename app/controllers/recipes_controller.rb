@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:edit, :update, :show, :like]
   before_action :require_user, except: [:show, :index]
+  before_action :require_user_like, only: [:like]
   before_action :require_same_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
   
   def index
     @recipes = Recipe.paginate(page: params[:page], per_page: 4)
@@ -18,10 +20,10 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.chef = current_user
+    
     if @recipe.save
       redirect_to recipes_path
-    
-    else 
+    else
       render :new
     end
   end
