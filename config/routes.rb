@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   post '/login', to: 'logins#create'
   get '/logout', to: 'logins#destroy'
   
+  resources :diets, only: [:new, :create, :show]
+  resources :courses, only: [:new, :create, :show]
+  
 end
  

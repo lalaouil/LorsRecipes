@@ -1,12 +1,46 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
     <%= link_to "Lor'sRecipes", root_path, class: "btn-custom btn-lg btn-info", id: "logo" %>
-    <div class="nav_item">
-      <%= link_to "link 1", "", class: "btn-custom btn-default btn-info" %>
-    </div>
-    <div class="nav_item">
-      <%= link_to "link 2", "", class: "btn-custom btn-default btn-info" %>
-    </div>
+    <ul class="nav_ul_item">
+      <li class="dropdown">
+            <%= link_to '#', class: "btn-custom btn-default btn-info dropdown-toggle", "data-toggle" => "dropdown" do %>            
+              Diets <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu list-unstyled">
+              <%= Diet.all.each do |diet| %>
+                <li><%= link_to diet.name, diet_path(diet) %></li>
+              <% end %>
+              <% if logged_in? %>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to (new_diet_path) do %>
+                    New Diet
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      <ul class="nav_ul_item">
+        <li class="dropdown">
+          <%= link_to '#', class: "btn-custom btn-default btn-info dropdown-toggle", "data-toggle" => "dropdown" do %>
+            Menus <b class="caret"></b>
+          <% end %>
+          <ul class='dropdown-menu'>
+            <% Course.all.each do |course| %>
+              <li><%= link_to course.name, course_path(course) %></li>
+            <% end %>
+            <% if logged_in? %>
+              <li class='divider'></li>
+              <li>
+                <%= link_to(new_course_path) do %>
+                  New Menu
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
       <% if logged_in? %>
         <div class="nav_item">
           <%= link_to "New Recipe", new_recipe_path, class: "btn-custom btn-default btn-info" %>

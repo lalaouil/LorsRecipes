@@ -9,8 +9,7 @@ $navbar-default-color: $dark-green;
   background-color: #932533 !important;
   background-repeat: repeat-x;
   color: #FFFFFF;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin: 3px;
   padding: 5px;
 }
 
@@ -38,7 +37,6 @@ $navbar-default-color: $dark-green;
 
 #logo:hover {
   color: white;
-  text-decoration: none;
   opacity: 0.75;
 }
 
@@ -54,9 +52,12 @@ body {
 }
 
 .nav_ul_item {
+  list-style: none;
   padding-left: 25px;
   float: left;
   margin-top: 20px;
+  text-decoration: none;
+  border-radius: 10px;
 }
 
 .dropdown-menu {
@@ -152,6 +153,3 @@ span.picture {
   margin: 10px 10px 10px 10px;
 }
 
-.tabs {
-  
-}

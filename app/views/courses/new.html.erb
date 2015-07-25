@@ -1,0 +1,14 @@
+<%= render 'shared/page_title', title: 'Create a new Course' %>
+
+<%= render 'shared/errors', obj: @course %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @course do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.submit 'Create Course', class:"btn-submit btn-success" %>
+    <% end %>
+  </div>
+</div>
