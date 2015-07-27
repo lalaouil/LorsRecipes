@@ -21,13 +21,17 @@
     <div class= "col-lg-6 well">
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= recipe.summary %></p>
-      <p>Diets: <%= render recipe.diets %></p>
-      <p>Menus: <%= render recipe.courses %></p>
+      <% if recipe.diets.any? %>
+        <p>Diets: <%= render recipe.diets %></p>
+      <% end %>
+      <% if recipe.courses.any? %>
+        <p>Menus: <%= render recipe.courses %></p>
+      <% end %>
       <p>
         <span class= "quiet"><small> created: <%= time_ago_in_words(recipe.created_at) %> ago, </small></span>
         <span class= "quiet"><small> updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
       </p>
-      <div class= "pull_right">
+      <div class= "pull-right">
         <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
           <i class= "glyphicon glyphicon-thumbs-up"></i> &nbsp <%= recipe.thumbs_up_total %>
         <% end %> &nbsp&nbsp&nbsp&nbsp
