@@ -20,7 +20,7 @@
       <% if @recipe.diets.any? %>
         <p>Diets: <%= render @recipe.diets %></p>
       <% end %>
-      <% if @recipes.courses.any? %>  
+      <% if @recipe.courses.any? %>  
         <p>Menus: <%= render @recipe.courses %></p>
       <% end %>
       <%= simple_format(@recipe.description) %>
