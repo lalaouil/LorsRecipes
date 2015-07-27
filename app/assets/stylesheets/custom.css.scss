@@ -8,7 +8,7 @@ $navbar-default-color: $dark-green;
 .btn-custom {
   background-color: #932533 !important;
   background-repeat: repeat-x;
-  color: #FFFFFF;
+  color: #FFF;
   margin: 3px;
   padding: 5px;
 }
@@ -20,23 +20,31 @@ $navbar-default-color: $dark-green;
 
 .btn-submit {
   background-color: #456e55;
-  color: #FFFFFF;
+  color: #FFF;
   border-color:#456e55;
 }
 
+#btn-1 {
+
+  float: center;
+  font-size: 1.5em;
+  color: #FFF;
+  font-weight: bold;
+}
+
 #logo {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: .25em;
+  margin-bottom: .25em;
   float: left;
-  margin-right: 10px;
+  margin-right: 1em;
   font-size: 2em;
-  color: #FFFFFF;
+  color: #FFF;
   letter-spacing: -1px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: white;
+  color: #FFF;
   opacity: 0.75;
 }
 
@@ -47,21 +55,21 @@ body {
 
 .nav_item {
   margin-left: 25px;
-  float: left;
+  float: right;
   margin-top: 20px;
 }
 
 .nav_ul_item {
   list-style: none;
   padding-left: 25px;
-  float: left;
+  float: right;
   margin-top: 20px;
   text-decoration: none;
   border-radius: 10px;
 }
 
 .dropdown-menu {
-  color: #FFFFFF;
+  color: #FFF;
 }
 
 .jumbotron {
@@ -69,12 +77,12 @@ body {
   background-image: image-url("cookbooks1a.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
-  color: #FFFFFF;
+  color: #FFF;
 }
 
-.jumbotron h2 {
-  font-size: 1.5em;
-  color: #FFFFFF;
+#jumbotron-btn {
+  padding: .5em;
+  
 }
 
 .center {
@@ -86,18 +94,30 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  color: gray;
+  font-size: 1em;
+  letter-spacing: -.03em;
+  margin-bottom: .5em;
+  color: red;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.3em;
+  font-size: 1.8em;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
+  color: #FFF;
+}
+
+h3 {
+  font-size: 1.5em;
+  text-align: center;
+  color: gray;
+}
+
+h4 {
+  font-size: 1em;
+  text-align: center;
   color: gray;
 }
 
@@ -107,7 +127,6 @@ h2 {
 }
   
 .footer {
-  margin-top: 25px;
   border-top: 1px solid #9dddcc;
   color: #666666;
 }
