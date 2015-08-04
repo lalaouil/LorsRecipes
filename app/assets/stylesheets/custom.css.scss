@@ -1,27 +1,156 @@
-$navbar-default-bg: #456e55;
-$dark-green: #92d9cf;
-$navbar-default-color: $dark-green; 
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+/* universal */
+body {
+  padding-top: 3.65em;
+}
+
+textarea {
+
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 0.625em;
+}
+
+.left {
+  text-align: left;
+  letter-spacing: 0.1em;
+}
+
+.title {
+  font-size: 2em;
+  color: #456e55;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -0.0625em;
+  margin-bottom: 1.875em;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+
+/* header */
+
+.navbar-custom {
+  width: 100%;
+	background-color: #456e55;
+  color: #FFF;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  	
+}
+
+  
+.navbar-custom .navbar-nav > li > a {
+  color: #FFF;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+  color: #FFF;
+	background-color: #456e55;
+}
+      
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #456e55;
+}
+      
+.navbar-brand {
+  float: left;
+  font-size: 2.6em;
+  color: #FFF;
+  letter-spacing: -0.05em;
+  font-weight: bold;
+  text-decoration: none;
+  padding-left: 1em;
+  display: inline;
+   &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+      
+
+
+.navbar-custom .navbar-toggle {
+  background-color: #456e55;
+}
+.navbar-custom .icon-bar {
+  background-color: #FFF;
+} 
+ 
+
+/* home */
+
+.page1 {
+  background-image: image-url("cookingScene1.jpg");
+	background-size: cover;
+	height: auto;
+	max-width: 100%;
+  background-repeat: no-repeat;
+}
+
+.center-text {
+  color: #FFF;
+}
+
+
+/* custom buttons */
 
 .btn-custom {
   background-color: #932533 !important;
   background-repeat: repeat-x;
+  border-color: #932533;
+  border-radius: 8px;
   color: #FFF;
-  margin: 3px;
-  padding: 5px;
+  margin: 2em;
+  padding: 0.5em 1em;
 }
 
 .btn-custom:hover {
-  opacity: 0.75;
+  opacity: 0.75%;
   text-decoration: none;
 }
 
 .btn-submit {
   background-color: #456e55;
   color: #FFF;
-  border-color:#456e55;
+  border-color: #456e55;
 }
 
 #btn-1 {
@@ -32,107 +161,37 @@ $navbar-default-color: $dark-green;
   font-weight: bold;
 }
 
-#logo {
-  margin-top: .25em;
-  margin-bottom: .25em;
-  float: left;
-  margin-right: 1em;
-  font-size: 2em;
-  color: #FFF;
-  letter-spacing: -1px;
-  font-weight: bold;
+
+/* footer */
+
+footer {
+  background-color: #456e55;
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #456e55;
+  color: #777;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
 
-#logo:hover {
-  color: #FFF;
-  opacity: 0.75;
-}
 
-body {
-  padding-top: 50px;
 
-}
-
-.nav_item {
-  margin-left: 25px;
-  float: right;
-  margin-top: 20px;
-}
-
-.nav_ul_item {
-  list-style: none;
-  padding-left: 25px;
-  float: right;
-  margin-top: 20px;
-  text-decoration: none;
-  border-radius: 10px;
-}
-
-.dropdown-menu {
-  color: #FFF;
-}
-
-.jumbotron {
-  text-align: center;
-  background-image: image-url("cookbooks1a.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  color: #FFF;
-}
-
-#jumbotron-btn {
-  padding: .5em;
-  
-}
-
-.center {
-  text-align: center;
-}
-
-h1, h2, h3, h4 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.8em;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #FFF;
-}
-
-h3 {
-  font-size: 1.5em;
-  text-align: center;
-  color: gray;
-}
-
-h4 {
-  font-size: 1em;
-  text-align: center;
-  color: gray;
-}
-
-.left {
-  text-align: left;
-  letter-spacing: .5px;
-}
-  
-.footer {
-  border-top: 1px solid #9dddcc;
-  color: #666666;
-}
-
-.footer p {
-  margin-top: 10px;
-}
+/* forms */
 
 .chef_info {
   margin-top: 10px;
@@ -143,17 +202,18 @@ h4 {
 }
 
 .well {
-  background-color: #EDEDED;
+  background-color: #D1DBD5;
 }
+
 input, textarea, select, .uneditable_input {
-  border: 1px solid #d2d2d2;
+  border: 1px solid #456e55;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 15px;
 }
 
 .input_checkbox input {
-  width: auto !important; 
+  width: auto !important;
 }
 
 input {
@@ -169,19 +229,4 @@ span.picture {
 
 .show_recipe {
   margin: 10px 10px 10px 10px;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
 }

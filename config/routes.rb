@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  
-  root 'pages#home'
- 
-  get '/home', to: 'pages#home'
-  get '/contact', to:'pages#contact'
+  root             'pages#home'
+
+  get 'contact' => 'pages#contact'
   
   resources :recipes do
     member do
@@ -13,11 +11,11 @@ Rails.application.routes.draw do
   
   resources :chefs, except: [:new]
   
-  get '/register', to: 'chefs#new'
+  get 'register' => 'chefs#new'
   
-  get '/login', to: 'logins#new'
-  post '/login', to: 'logins#create'
-  get '/logout', to: 'logins#destroy'
+  get 'login' => 'logins#new'
+  post 'login' => 'logins#create'
+  get 'logout' => 'logins#destroy'
   
   resources :diets, only: [:new, :create, :show]
   resources :courses, only: [:new, :create, :show]

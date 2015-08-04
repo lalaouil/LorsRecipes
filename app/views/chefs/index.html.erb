@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: 'All Chefs' %>
+<%= render 'shared/page_title', title: 'All Contributers' %>
 
 <div class="container">
   <ul class="nav nav-tabs">
@@ -6,7 +6,7 @@
       <%= link_to "All Recipes", recipes_path %>
     </li>
     <li class="active">
-      <%= link_to "All Chefs", chefs_path %>
+      <%= link_to "Contributer: ", chefs_path %>
     </li>
   </ul>
    <div class="row">
@@ -20,7 +20,7 @@
   <div class= "col-lg-6 col-lg-6 center">
   <%= link_to gravatar_for(chef, size: 200), chef_path(chef) %>
     <p>
-      <h5>Chef name: <%= chef.chefname %></h5>
+      <h5>Contributer: <%= chef.chefname %></h5>
     </p>
     <p>&nbsp</p>
   </div>

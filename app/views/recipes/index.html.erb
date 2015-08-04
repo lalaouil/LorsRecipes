@@ -1,12 +1,12 @@
 <%= render 'shared/page_title', title: 'All Recipes' %>
 
-<div class="container">
+
 <ul class="nav nav-tabs">
   <li class="active">
     <%= link_to "All Recipes", recipes_path %>
   </li>
   <li>
-    <%= link_to "All Chefs", chefs_path %>
+    <%= link_to "All Contributers", chefs_path %>
   </li>
 </ul>
 <p>&nbsp</p>
@@ -49,5 +49,5 @@
   <div class="paginate center">
     <%= will_paginate %>
   </div>
-</div>
+
 

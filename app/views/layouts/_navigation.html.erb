@@ -1,67 +1,64 @@
-<header class="navbar navbar-fixed-top navbar-default">
-  <div class="container">
-    <%= link_to "Lor'sRecipes", root_path, class: "btn-custom btn-lg btn-info", id: "logo" %>
-    <ul class="nav_ul_item">
+<nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="row">
+     <%= link_to "Lor's Recipes", recipes_path, class:"navbar-brand" %>
+  </div>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-            <%= link_to '#', class: "btn-custom btn-default btn-info dropdown-toggle", "data-toggle" => "dropdown" do %>            
-              Diets <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu list-unstyled">
-              <%= Diet.all.each do |diet| %>
-                <li><%= link_to diet.name, diet_path(diet) %></li>
-              <% end %>
-              <% if logged_in? %>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to (new_diet_path) do %>
-                    New Diet
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </li>
+          <%= link_to '#', class: "dropdown-toggle", "data-toggle" => "dropdown" do %> 
+            Courses <b class="caret"></b>
+          <% end %>
+        <ul class='dropdown-menu'>
+          <% Course.all.each do |course| %>
+            <li><%= link_to course.name, course_path(course) %></li>
+          <% end %>
         </ul>
-      <ul class="nav_ul_item">
+      </li>
+      <li class="dropdown">
+          <%= link_to '#', class: "dropdown-toggle", "data-toggle" => "dropdown" do %> 
+            Diets <b class="caret"></b>
+          <% end %>
+        <ul class='dropdown-menu'>
+          <% Diet.all.each do |diet| %>
+            <li><%= link_to diet.name, course_path(diet) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to "Home", root_path, class:"active" %></li>
+       
+       <li><%= link_to "Log in", login_path, class:"active" %></li>
+     </ul>
+   </div><!-- /.navbar-collapse -->
+  
+
+ <% if logged_in? %>
+      <div class="nav_item">
+        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-default btn-warning" %>
+      </div>
+      <ul class="nav_item">
         <li class="dropdown">
-          <%= link_to '#', class: "btn-custom btn-default btn-info dropdown-toggle", "data-toggle" => "dropdown" do %>
-            Menus <b class="caret"></b>
+          <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            <%= current_user.chefname %> <b class="caret"></b>
           <% end %>
           <ul class='dropdown-menu'>
-            <% Course.all.each do |course| %>
-              <li><%= link_to course.name, course_path(course) %></li>
-            <% end %>
-            <% if logged_in? %>
-              <li class='divider'></li>
-              <li>
-                <%= link_to(new_course_path) do %>
-                  New Menu
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
+            <li><%= link_to "View Profile", chef_path(current_user) %></li>
+            <li><%= link_to "Edit Profile", edit_chef_path(current_user) %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Logout", logout_path %></li>
+           </ul>
         </li>
       </ul>
-      <% if logged_in? %>
-        <div class="nav_item">
-          <%= link_to "New Recipe", new_recipe_path, class: "btn-custom btn-default btn-info" %>
-        </div>
-        <ul class="nav_item list-unstyled">
-          <li class="dropdown">
-            <%= link_to '#', class: "btn-custom btn-default btn-info dropdown-toggle", "data-toggle" => "dropdown" do %>            
-              <%= current_user.chefname %> <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu list-unstyled">
-              <li><%= link_to "View Your Profile", chef_path(current_user) %></li>
-              <li><%= link_to "Edit Your Profile", edit_chef_path(current_user) %></li>
-              <li class= "divider"></li>
-              <li><%= link_to "Logout", logout_path %></li>
-            </ul>
-          </li>
-        </ul>
-      <% else %>
+    <% else %>
       <div class="nav_item">
-        <%= link_to "Log in", login_path, class: "btn-custom btn-default btn-info" %>
+        <%= link_to "Log in", login_path, class: "btn btn-custom" %>
       </div>
-    <% end %>
-  </div>
-</header
+    <% end %>  
+</nav>

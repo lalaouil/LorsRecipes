@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724190237) do
+ActiveRecord::Schema.define(version: 20150804181403) do
 
   create_table "chefs", force: true do |t|
     t.string   "chefname"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150724190237) do
     t.datetime "updated_at"
     t.string   "password_digest"
   end
+
+  add_index "chefs", ["email"], name: "index_chefs_on_email", unique: true
 
   create_table "courses", force: true do |t|
     t.string "name"
