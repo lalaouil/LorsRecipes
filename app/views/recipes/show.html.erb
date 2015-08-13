@@ -9,9 +9,11 @@
     </p>
   </div>
   <div class="col-sm-8">
-    <% if logged_in? and @recipe.chef == current_user %>
+    <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
       <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn-custom btn-default btn-info pull-right" %>
     <% end %>
+    <% if current_user.admin? %>
+    <%=link_to "[Delete Recipe]", @recipe, method: :delete, data: { confirm: "Are you sure?" } %>
     <h3><%= @recipe.summary %></h3>
     <div class="show_recipe">
       <%= image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
@@ -21,7 +23,7 @@
         <p>Diets: <%= render @recipe.diets %></p>
       <% end %>
       <% if @recipe.courses.any? %>  
-        <p>Menus: <%= render @recipe.courses %></p>
+        <p>Courses: <%= render @recipe.courses %></p>
       <% end %>
       <%= simple_format(@recipe.description) %>
       <div class="pull-right">

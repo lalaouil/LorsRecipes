@@ -25,7 +25,7 @@
         <p>Diets: <%= render recipe.diets %></p>
       <% end %>
       <% if recipe.courses.any? %>
-        <p>Menus: <%= render recipe.courses %></p>
+        <p>Courses: <%= render recipe.courses %></p>
       <% end %>
       <p>
         <span class= "quiet"><small> created: <%= time_ago_in_words(recipe.created_at) %> ago, </small></span>
