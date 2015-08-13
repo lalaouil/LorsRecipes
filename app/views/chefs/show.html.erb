@@ -1,21 +1,21 @@
 <%= render 'shared/page_title', title: @chef.chefname %>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-4 center">
+  <div class="col-sm-4 col-sm-offset-4 center">
     <%= gravatar_for @chef, size: 200 %>
     <hr/>
   </div>
 </div>
 
 <div class= "row">
-    <div class= "col-md-4 col-md-offset-4 center">
+    <div class= "col-sm-4 col-sm-offset-4 center">
       <h3><em>Recipes</em></h3>
     </div>
 </div>
 
 <% @recipes.each do |recipe| %>
   <div class= "row">
-    <div class= "col-lg-6 well col-lg-offset-3">
+    <div class= "col-sm-6 well col-sm-offset-3">
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= recipe.summary %></p>
       <p>

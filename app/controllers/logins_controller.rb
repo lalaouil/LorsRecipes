@@ -10,7 +10,7 @@ class LoginsController < ApplicationController
       session[:chef_id] = chef.id
       redirect_to recipes_path
     else
-      flash.now[:danger] = "Your email address or password does not match" 
+      flash.now[:danger] = "Uh oh! Your email address or password does not match." 
       render 'new'
     end
   end

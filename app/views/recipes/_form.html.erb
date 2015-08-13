@@ -1,7 +1,7 @@
 <%= render 'shared/errors', obj: @recipe %>
       
 <div class="row">
-  <div class="well col-md-8 col-md-offset-2">
+  <div class="well col-sm-6 col-sm-offset-3">
     <%= form_for(@recipe, html: { multipart: true }) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -18,7 +18,7 @@
       <% end %>
       <br><br>
       
-      <strong>Menus:</strong>
+      <strong>Courses:</strong>
       <%= f.collection_check_boxes :course_ids, Course.all, :id, :name do |cb| %>
       <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
       <% end %>

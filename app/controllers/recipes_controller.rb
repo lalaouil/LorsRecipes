@@ -45,14 +45,14 @@ class RecipesController < ApplicationController
     if like.valid?
       redirect_to :back
     else
-      flash[:danger] ="You may only like or dislike a recipe once"
+      flash[:danger] ="Tsk tsk. No fair voting more than once!"
       redirect_to :back
     end
   end
     private
   
       def recipe_params
-        params.require(:recipe).permit(:name, :summary, :description, :picture, style_ids: [], ingredient_ids: [])
+        params.require(:recipe).permit(:name, :summary, :description, :picture, diet_ids: [], course_ids: [])
       end
       
       def set_recipe
@@ -61,14 +61,14 @@ class RecipesController < ApplicationController
       
       def require_same_user
         if current_user != @recipe.chef
-          flash[:danger] = "You may only edit your own recipes"
+          flash[:danger] = "I'm sorry. You may only edit your own recipes."
           redirect_to recipe_path
         end
       end
       
       def require_user_like
         if !logged_in?
-          flash[:danger] = "You must be logged in to perform that action" 
+          flash[:danger] = "Uh oh. You must be logged in to perform that action." 
           redirect_to :back
         end
       end
