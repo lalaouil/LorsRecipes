@@ -191,6 +191,7 @@ p {
 .btn-custom:hover {
   opacity: 0.75%;
   text-decoration: none;
+  color: #FFF;
 }
 
 .btn-submit {
@@ -243,6 +244,8 @@ p {
 
 .well {
   background-color: #D1DBD5;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 input, textarea, select, .uneditable_input {
@@ -288,7 +291,6 @@ span.picture {
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;

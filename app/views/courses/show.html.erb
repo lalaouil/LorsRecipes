@@ -6,7 +6,7 @@
     <%= link_to "All Recipes", recipes_path %>
   </li>
   <li>
-    <%= link_to "All Chefs", chefs_path %>
+    <%= link_to "All Contributers", chefs_path %>
   </li>
 </ul>
 <p>&nbsp</p>
@@ -15,7 +15,7 @@
     <div class= "col-sm-2">
       <section class= "chef_info center">
         <%= link_to gravatar_for(recipe.chef, size: 100), chef_path(recipe.chef) %>
-        <h5>Chef name: <%= recipe.chef.chefname %></h5>
+        <h5>Brought to you by: <%= recipe.chef.chefname %></h5>
       </section>
     </div>
     <div class= "col-sm-6 well">
