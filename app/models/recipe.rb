@@ -7,8 +7,8 @@ class Recipe < ActiveRecord::Base
   has_many :courses, through: :recipe_courses
   validates :chef_id, presence: true
   validates :name, presence: true, length: { minimum: 4, maximum: 100 }
-  validates :summary, presence: true, length: { minimum: 10, maximum: 150 }
-  validates :description, presence: true, length: { minimum: 50, maximum: 1800 }
+  validates :summary, presence: true, length: { minimum: 10, maximum: 250 }
+  validates :description, presence: true, length: { minimum: 50, maximum: 2000 }
   mount_uploader :picture, PictureUploader
   validate :picture_size
   default_scope -> { order(updated_at: :desc) }
