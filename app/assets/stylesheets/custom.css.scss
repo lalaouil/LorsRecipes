@@ -7,6 +7,12 @@ body {
   padding-top: 3em;
 }
 
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
 textarea {
 
 }
@@ -64,19 +70,13 @@ p {
 .navbar-custom {
   background-color: #456e55;
   border-color: #456e55;
-  color: #fff;
-  padding-left: 4%;
-  padding-right: 3%;
+  color: #FFF;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-.navbar-custom .navbar-brand > a {
-  color: #fff;
-}
-.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
-  color: #fff;
-}
-.navbar-custom .navbar-nav > li > a {
-  color: #fff;
-}
+
+
+
 .navbar-custom .navbar-nav > li > a:hover, .navbar-custom  .navbar-nav > li > a:focus {
   color: #D1DBD5;
   background-color: #456e55;
@@ -165,14 +165,16 @@ p {
 .page1 {
   background-image: image-url("cookingScene1.jpg");
 	background-size: cover;
+	background-position: 45% 0%;
 	height: auto;
 	max-width: 100%;
   background-repeat: no-repeat;
+  padding: 0;
 }
 
 .center-text {
   color: #FFF;
-  padding: 10%;
+  margin: 10%;
 }
 
 
@@ -200,6 +202,10 @@ p {
   border-color: #456e55;
 }
 
+#return-btn {
+  margin: 1em;
+  display: inline-block;
+}
 #btn-1 {
 
   float: center;
@@ -211,48 +217,38 @@ p {
 
 /* footer */
 
-.footer-custom {
-  color: #456e55;
-  padding: 0;
+.navbar-custom .navbar-footer {
   text-align: center;
-  display: inline;
-  .active {
-    color: #456e55;
-    &:hover {
-      color: #456e55;
-    }
-  }
-}
-.footer-custom .col-md-4 left {
-  float: left;
 }
 
-.footer-custom .col-md-4 right {
-  push: right;
+.navbar-custom .navbar-footer> a:hover, .navbar-custom  .navbar-footer> a:focus {
+  color: #D1DBD5;
+  background-color: #456e55;
 }
+
 
 
 /* forms */
 
 .chef_info {
-  margin-top: 10px;
+  margin-top: 2em;
 }
 
 .gravatar {
-  border-radius: 10px;
+  border-radius: .5em;
 }
 
 .well {
   background-color: #D1DBD5;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 2em;
+  border-radius: .2em;
 }
 
 input, textarea, select, .uneditable_input {
   border: 1px solid #456e55;
-  border-radius: 5px;
+  border-radius: .2em;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 3em;
 }
 
 .input_checkbox input {
@@ -263,22 +259,66 @@ input {
   height: auto !important;
 }
 
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
+
+.tabbable-panel {
+  border: none;
+  padding: 10px;
 }
 
-.show_recipe {
-  margin: 10px 10px 10px 10px;
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #456e55;
+}
+
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #456e55;
+}
+
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #D1DBD5;
+}
+
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #456e55;
+}
+
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #456e55;
+  position: relative;
+}
+
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #456e55;
+}
+
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #D1DBD5;
+  padding: 3em 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
 }
 
 #error_explanation {
   color: red;
   ul {
     color: red;
-    margin: 0 0 30px 0;
+    margin: 0 0 2em 0;
   }
 }
 
@@ -289,24 +329,8 @@ span.picture {
   }
 }
 
-/* mixins, variables, etc. */
-
-
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+.paginate-center {
+  padding: 3em;
 }
 
 
-
-
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}

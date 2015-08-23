@@ -1,19 +1,25 @@
 <%= render 'shared/page_title', title: @diet.name + ' Recipes'%>
 
 <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="active">
-      <%= link_to "All Recipes", recipes_path %>
-    </li>
-    <li>
-      <%= link_to "All Contributers", chefs_path %>
-    </li>
-  </ul>
-  
-<p>&nbsp</p>
-
-  <% @diet.recipes.each do |recipe| %>
-    <div class= "row">
+  <div class="tabbable-panel">
+    <div class="tabbable-line">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <%= link_to "All Recipes", recipes_path %>
+        </li>
+        <li>
+          <%= link_to "All Contributers", chefs_path %>
+        </li>
+      </ul>
+      <div class="tab-content">
+		    <div class="tab-pane active" id="tab_default_1">
+          <div class="row">
+            <p>&nbsp</p>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <% @diet.recipes.each do |recipe| %>
+        <div class= "row">
       
       <div class= "col-sm-2">
         <section class= "chef_info center">
@@ -46,6 +52,11 @@
   </div>
     <hr/>
       <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="paginate center">
     <%= will_paginate @recipes%>
   </div>
